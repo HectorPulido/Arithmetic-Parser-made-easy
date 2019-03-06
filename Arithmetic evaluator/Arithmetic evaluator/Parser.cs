@@ -10,6 +10,7 @@ namespace Arithmetic_evaluator
     {
         public static double? Evaluator(string input)
         {
+            input = input.Replace(" ", "");
             if (input.Contains("(") || input.Contains(")"))
             {
                 if (!ValidParenthesys(input))
@@ -52,7 +53,6 @@ namespace Arithmetic_evaluator
                 }
                 input = input.Replace("(", "");
                 input = input.Replace(")", "");
-                input = input.Replace(" ", "");
             }
 
             List<string> ParsedOperations = OperationParser(input);
